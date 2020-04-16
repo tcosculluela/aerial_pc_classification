@@ -93,7 +93,7 @@ def compute_features(path_ply, steps_params):
                 "z": grid_ground_3d[:, 2],
                 "ground_altitude": grid_ground_3d[:, 2],
             }
-
+            os.makedirs(PATH_GROUND_RASTERIZED, exist_ok=True)
             path_rasterized = os.path.join(PATH_GROUND_RASTERIZED, filename)
             if dict2ply(ground_rasterized, path_rasterized):
                 print(
